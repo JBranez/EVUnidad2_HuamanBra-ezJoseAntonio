@@ -1,0 +1,351 @@
+<section id="solicitud" class="section-space request-section">
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-items-start">
+      <div class="col-lg-5">
+        <span class="section-kicker">CITAS</span>
+        <h2 class="section-title">ESTE ES EL FORMULARIO</h2>
+
+        <p class="section-subtitle mt-3">
+          Completa tus datos y registra una solicitud de cita. La información
+          ingresada aparece debajo del formulario
+        </p>
+
+        <div class="request-side mt-4">
+          <div class="request-tip">
+            <span>
+              <i class="bi bi-check2"></i>
+            </span>
+
+            <div>
+              <strong></strong>
+              <small>
+                
+              </small>
+            </div>
+          </div>
+
+          <div class="request-tip">
+            <span>
+              <i class="bi bi-lightning-charge"></i>
+            </span>
+
+            <div>
+              <strong></strong>
+              <small>
+              </small>
+            </div>
+          </div>
+
+          <div class="request-tip">
+            <span>
+              <i class="bi bi-lock"></i>
+            </span>
+
+            <div>
+              <strong></strong>
+              <small>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+
+        @if (alerta(); as mensaje) {
+          <div
+            class="alert d-flex align-items-start gap-3 rounded-4 shadow-sm"
+            [class.alert-success]="mensaje.tipo === 'success'"
+            [class.alert-warning]="mensaje.tipo === 'warning'"
+            role="alert"
+          >
+            <i
+              class="bi"
+              [class.bi-check-circle-fill]="mensaje.tipo === 'success'"
+              [class.bi-exclamation-triangle-fill]="mensaje.tipo === 'warning'"
+            ></i>
+
+            <div class="flex-grow-1">
+              {{ mensaje.mensaje }}
+            </div>
+
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Cerrar alerta"
+              (click)="cerrarAlerta()"
+            ></button>
+          </div>
+        }
+
+        <div class="form-panel mb-4">
+          <div
+            class="d-flex justify-content-between align-items-start gap-3 mb-4"
+          >
+            <div>
+              <span class="form-mini-label"></span>
+              <h3 class="form-title">Solicitar una cita</h3>
+            </div>
+
+            <span class="required-note">
+            </span>
+          </div>
+
+          <form
+            #formularioHtml="ngForm"
+            (ngSubmit)="enviarSolicitud(formularioHtml.valid ?? false)"
+            novalidate
+          >
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="paciente" class="form-label">
+                  Nombre completo *
+                </label>
+
+                <input
+                  id="paciente"
+                  name="paciente"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej. Ana Torres"
+                  required
+                  minlength="3"
+                  [value]="formulario().paciente"
+                  (input)="
+                    actualizarCampo(
+                      'paciente',
+                      $any($event.target).value
+                    )
+                  "
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">
+                  Teléfono *
+                </label>
+
+                <input
+                  id="telefono"
+                  name="telefono"
+                  type="tel"
+                  class="form-control"
+                  placeholder="999 999 999"
+                  required
+                  pattern="[0-9 ]{9,11}"
+                  [value]="formulario().telefono"
+                  (input)="
+                    actualizarCampo(
+                      'telefono',
+                      $any($event.target).value
+                    )
+                  "
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="correo" class="form-label">
+                  Correo electrónico *
+                </label>
+
+                <input
+                  id="correo"
+                  name="correo"
+                  type="email"
+                  class="form-control"
+                  placeholder="nombre@correo.com"
+                  required
+                  [value]="formulario().correo"
+                  (input)="
+                    actualizarCampo(
+                      'correo',
+                      $any($event.target).value
+                    )
+                  "
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="servicio" class="form-label">
+                  Servicio *
+                </label>
+
+                <select
+                  id="servicio"
+                  name="servicio"
+                  class="form-select"
+                  required
+                  [value]="formulario().servicio"
+                  (change)="
+                    actualizarCampo(
+                      'servicio',
+                      $any($event.target).value
+                    )
+                  "
+                >
+                  <option value="">
+                    Selecciona un servicio
+                  </option>
+
+                  <option value="Emergencia 24 horas">
+                    Emergencia 24 horas
+                  </option>
+
+                  <option value="Medicina general">
+                    Medicina general
+                  </option>
+
+                  <option value="Laboratorio clínico">
+                    Laboratorio clínico
+                  </option>
+
+                  <option value="Pediatría">
+                    Pediatría
+                  </option>
+
+                  <option value="Cardiología">
+                    Cardiología
+                  </option>
+
+                  <option value="Diagnóstico por imágenes">
+                    Diagnóstico por imágenes
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="fecha" class="form-label">
+                  Fecha preferida *
+                </label>
+
+                <input
+                  id="fecha"
+                  name="fecha"
+                  type="date"
+                  class="form-control"
+                  required
+                  [value]="formulario().fecha"
+                  (change)="
+                    actualizarCampo(
+                      'fecha',
+                      $any($event.target).value
+                    )
+                  "
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="mensaje" class="form-label">
+                  Motivo breve
+                </label>
+
+                <input
+                  id="mensaje"
+                  name="mensaje"
+                  type="text"
+                  class="form-control"
+                  maxlength="100"
+                  placeholder="Ej. Control de rutina"
+                  [value]="formulario().mensaje"
+                  (input)="
+                    actualizarCampo(
+                      'mensaje',
+                      $any($event.target).value
+                    )
+                  "
+                />
+              </div>
+
+              <div
+                class="col-12 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 pt-2"
+              >
+                <small class="text-body-secondary">
+                  <i class="bi bi-info-circle me-1"></i>
+                </small>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded-pill px-4"
+                >
+                  Guardar solicitud
+                  <i class="bi bi-send ms-2"></i>
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <div class="registered-panel">
+
+          <div
+            class="d-flex align-items-center justify-content-between mb-3"
+          >
+            <div>
+              <span class="form-mini-label">
+                Datos almacenados
+              </span>
+
+              <h3 class="stored-title mb-0">
+                Solicitudes registradas
+              </h3>
+            </div>
+
+            <span class="count-badge">
+              {{ solicitudes().length }}
+            </span>
+          </div>
+
+          <div class="registered-list">
+
+            @for (solicitud of solicitudes(); track solicitud.id) {
+
+              <article class="registered-item">
+
+                <div class="registered-avatar">
+                  {{ solicitud.paciente.slice(0, 2).toUpperCase() }}
+                </div>
+
+                <div class="flex-grow-1 min-width-0">
+
+                  <div
+                    class="d-flex flex-column flex-md-row justify-content-between gap-1"
+                  >
+                    <strong>
+                      {{ solicitud.paciente }}
+                    </strong>
+
+                    <span class="stored-date">
+                      {{ solicitud.fecha }}
+                    </span>
+                  </div>
+
+                  <small>
+                    {{ solicitud.servicio }}
+                    ·
+                    {{ solicitud.telefono }}
+                    ·
+                    {{ solicitud.correo }}
+                  </small>
+
+                  @if (solicitud.mensaje) {
+                    <p class="mb-0 mt-1">
+                      {{ solicitud.mensaje }}
+                    </p>
+                  }
+
+                </div>
+
+              </article>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<section id="servicios" class="section-space">
+  <div class="container">
+    <div class="section-heading row align-items-end g-3 mb-4 mb-lg-5">
+      <div class="col-lg-7">
+        <span class="section-kicker">SERVICIOS OFRECIDOS</span>
+        <h2 class="section-title">Servicios</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="section-subtitle mb-0"></p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      @for (servicio of servicios; track servicio.id) {
+        <div class="col-md-6 col-xl-4">
+          <article class="service-card h-100">
+            <div class="d-flex justify-content-between align-items-start mb-4">
+              <span class="service-icon"><i [class]="servicio.icono"></i></span>
+              <span class="small text-body-secondary">0{{ servicio.id }}</span>
+            </div>
+            <h3>{{ servicio.nombre }}</h3>
+            <p>{{ servicio.descripcion }}</p>
+            <button type="button" class="btn btn-link service-link p-0 text-decoration-none" (click)="verDetalle(servicio.id)" [attr.aria-expanded]="servicioSeleccionado() === servicio.id">
+              {{ servicioSeleccionado() === servicio.id ? 'Ocultar detalle' : 'Ver detalle' }}
+              <i class="bi" [class.bi-arrow-up-right]="servicioSeleccionado() !== servicio.id" [class.bi-chevron-up]="servicioSeleccionado() === servicio.id"></i>
+            </button>
+            @if (servicioSeleccionado() === servicio.id) {
+              <div class="service-detail mt-3">{{ servicio.detalle }}</div>
+            }
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

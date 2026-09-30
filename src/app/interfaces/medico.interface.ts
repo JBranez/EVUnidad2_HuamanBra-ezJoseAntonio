@@ -1,0 +1,8 @@
+export interface Medico {
+  id: number;
+  nombre: string;
+  especialidad: string;
+  experiencia: string;
+  horario: string;
+  iniciales: string;
+}

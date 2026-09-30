@@ -1,0 +1,10 @@
+.promo-section { background: #f6f2eb; }
+.promo-caption { display: inline-flex; align-items: center; padding: .65rem .85rem; background: rgba(255,255,255,.72); border: 1px solid rgba(136,112,82,.14); border-radius: 12px; color: #6c675e; font-size: .78rem; }
+.promo-card { padding: 1.35rem; border: 1px solid #e4ded3; border-radius: 22px; background: rgba(255,255,255,.85); box-shadow: 0 12px 30px rgba(91,70,42,.05); }
+.promo-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: #fff8ed; color: #a36d2f; font-size: 1.45rem; }
+.promo-tag { padding: .34rem .55rem; border-radius: 50rem; background: #edf5ed; color: #56704d; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+.promo-card h3 { color: #4c4437; font-size: 1.15rem; font-weight: 800; }
+.promo-card p { min-height: 52px; color: #766f64; line-height: 1.6; }
+.promo-price { color: #8a5a26; font-size: 2rem; letter-spacing: -.04em; }
+.promo-valid { color: #777066; }
+.promo-card .btn-outline-primary { --bs-btn-color: #7b5c33; --bs-btn-border-color: #cdb38e; --bs-btn-hover-color: #fff; --bs-btn-hover-bg: #7b5c33; --bs-btn-hover-border-color: #7b5c33; }

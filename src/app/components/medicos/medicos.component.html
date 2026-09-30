@@ -1,0 +1,30 @@
+<section id="medicos" class="section-space team-section">
+  <div class="container">
+    <div class="row align-items-end g-3 mb-4 mb-lg-5">
+      <div class="col-lg-8">
+        <span class="section-kicker"></span>
+        <h2 class="section-title">PRESENTACION DE LOS MEDICOS QUE LABORAN EN LA INSTITUCION</h2>
+        <p class="section-subtitle mt-3 mb-0">Algunos profesionales que forman parte del Hospital Sano y las especialidades que atienden</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <span class="team-note"><i class="bi bi-patch-check-fill me-2"></i>Información de atención referencial</span>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      @for (medico of medicos; track medico.id) {
+        <div class="col-md-6 col-xl-3">
+          <article class="doctor-card h-100">
+            <div class="doctor-avatar">{{ medico.iniciales }}</div>
+            <div class="mt-4">
+              <h3>{{ medico.nombre }}</h3>
+              <p class="doctor-specialty">{{ medico.especialidad }}</p>
+              <div class="doctor-meta"><i class="bi bi-award"></i>{{ medico.experiencia }}</div>
+              <div class="doctor-meta"><i class="bi bi-calendar3"></i>{{ medico.horario }}</div>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

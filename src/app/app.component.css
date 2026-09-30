@@ -1,0 +1,47 @@
+.site-header .navbar {
+  backdrop-filter: blur(10px);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #e4f4f1;
+  color: #0f766e;
+  font-size: 1.25rem;
+}
+
+.brand-mark-dark {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+}
+
+.brand-name {
+  color: #16352f;
+  letter-spacing: -.02em;
+}
+
+.nav-link {
+  color: #4b5d58;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #0f766e;
+}
+
+.footer-section {
+  background: #173b35;
+  color: rgba(255,255,255,.78);
+}
+
+.footer-copy {
+  max-width: 470px;
+  color: rgba(255,255,255,.65);
+}
+
+.footer-rule {
+  border-color: rgba(255,255,255,.14);
+}

@@ -1,0 +1,36 @@
+<section id="resenas" class="section-space reviews-section">
+  <div class="container">
+    <div class="text-center mx-auto reviews-heading">
+      <span class="section-kicker"></span>
+      <h2 class="section-title">RESEÑAS</h2>
+      <p class="section-subtitle mt-3">Reseñas de ejemplo para presentar la sección de experiencias dentro de la web institucional.</p>
+    </div>
+
+    <div class="row g-4 mt-2">
+      @for (resena of resenas; track resena.id) {
+        <div class="col-lg-4">
+          <article class="review-card h-100">
+            <div class="d-flex justify-content-between gap-3 align-items-start">
+              <div class="d-flex gap-3 align-items-center">
+                <div class="review-avatar">{{ resena.iniciales }}</div>
+                <div>
+                  <strong>{{ resena.paciente }}</strong>
+                  <small class="d-block text-body-secondary">{{ resena.fecha }}</small>
+                </div>
+              </div>
+              <span class="review-service">{{ resena.servicio }}</span>
+            </div>
+
+            <div class="stars my-3" [attr.aria-label]="resena.puntuacion + ' de 5 estrellas'">
+              @for (estrella of estrellas; track estrella) {
+                <i class="bi" [class.bi-star-fill]="estrella <= resena.puntuacion" [class.bi-star]="estrella > resena.puntuacion"></i>
+              }
+            </div>
+            <p class="review-text">“{{ resena.texto }}”</p>
+            <div class="review-footer"><i class="bi bi-check2-circle me-2"></i></div>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

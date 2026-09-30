@@ -1,0 +1,36 @@
+.request-section { background: #edf6f3; }
+.request-side { display: grid; gap: .9rem; max-width: 500px; }
+.request-tip { display: flex; gap: .8rem; align-items: flex-start; padding: .9rem; border: 1px solid #d9e9e5; border-radius: 16px; background: rgba(255,255,255,.65); }
+.request-tip > span { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; border-radius: 10px; background: #dcefeb; color: #0f766e; }
+.request-tip strong { display: block; color: #2b5048; font-size: .88rem; }
+.request-tip small { display: block; color: #70817c; line-height: 1.5; }
+
+.form-panel, .registered-panel { padding: 1.4rem; border: 1px solid #dbe9e5; border-radius: 24px; background: #fff; box-shadow: 0 18px 38px rgba(31,70,62,.07); }
+.form-mini-label { color: #0f766e; text-transform: uppercase; letter-spacing: .09em; font-weight: 800; font-size: .68rem; }
+.form-title, .stored-title { margin-top: .25rem; color: #24473f; font-size: 1.25rem; font-weight: 800; }
+.required-note { color: #8a9894; font-size: .72rem; }
+.form-label { color: #405c55; font-size: .82rem; font-weight: 700; }
+.form-control, .form-select { min-height: 46px; border-color: #d8e5e1; border-radius: 13px; color: #34524c; }
+.form-control:focus, .form-select:focus { border-color: #70aaa0; box-shadow: 0 0 0 .2rem rgba(15,118,110,.10); }
+.form-control::placeholder { color: #a0aba7; }
+
+.alert { border: 0; }
+.alert-success { color: #25624c; background: #e5f5ed; }
+.alert-warning { color: #785f25; background: #fff4d8; }
+.alert > i { margin-top: .15rem; }
+
+.registered-panel { box-shadow: 0 8px 24px rgba(31,70,62,.04); }
+.count-badge { min-width: 32px; height: 32px; padding: 0 .6rem; display: inline-grid; place-items: center; border-radius: 50rem; background: #e6f3f0; color: #0f766e; font-weight: 800; font-size: .8rem; }
+.registered-list { display: grid; gap: .7rem; }
+.registered-item { display: flex; gap: .75rem; padding: .8rem; border-radius: 15px; background: #f7faf9; border: 1px solid #ebf1ef; }
+.registered-avatar { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 12px; background: #dcefeb; color: #16685f; font-weight: 800; font-size: .7rem; }
+.registered-item strong { color: #36564f; font-size: .85rem; }
+.registered-item small { color: #71817d; font-size: .72rem; }
+.registered-item p { color: #667b75; font-size: .74rem; }
+.stored-date { color: #0f766e; font-size: .72rem; font-weight: 700; }
+.min-width-0 { min-width: 0; }
+
+@media (max-width: 575.98px) {
+  .form-panel, .registered-panel { padding: 1rem; border-radius: 20px; }
+  .request-side { gap: .7rem; }
+}

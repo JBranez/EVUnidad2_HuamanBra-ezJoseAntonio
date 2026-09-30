@@ -1,0 +1,70 @@
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+    <div class="container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Hospital Dr. Sano, inicio">
+        <span class="brand-mark"><i class="bi bi-plus-lg"></i></span>
+        <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+        <span>
+          <strong class="brand-name d-block">Dr. Sano</strong>
+          <small class="text-body-secondary">Hospital SANO</small>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#medicos">Médicos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resenas">Reseñas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary rounded-pill px-4" href="#solicitud">Solicitar cita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <app-hero></app-hero>
+  <app-servicios></app-servicios>
+  <app-medicos></app-medicos>
+  <app-resenas></app-resenas>
+  <app-promociones></app-promociones>
+  <app-solicitud></app-solicitud>
+</main>
+
+<footer class="footer-section">
+  <div class="container py-5">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-5">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="brand-mark brand-mark-dark"><i class="bi bi-plus-lg"></i></span>
+          <div>
+            <strong class="text-white d-block fs-5">Hospital Sano</strong>
+            <small class="text-white-50"></small>
+          </div>
+        </div>
+        <p class="footer-copy mb-0">Página institucional desarrollada para la evaluación de Desarrollo de Aplicaciones Web.</p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h2 class="h6 text-white mb-3">Atención</h2>
+        <p class="small mb-2"><i class="bi bi-telephone me-2"></i>(064) 555 010</p>
+        <p class="small mb-2"><i class="bi bi-envelope me-2"></i>sano@drsano.pe</p>
+        <p class="small mb-0"><i class="bi bi-clock me-2"></i>24 horas</p>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="h6 text-white mb-3">Ubicación</h2>
+        <p class="small mb-2"><i class="bi bi-geo-alt me-2"></i>Av. BLAHBLAHBLAH Huancayo</p>
+        <p class="small mb-0"></p>
+      </div>
+    </div>
+    <hr class="footer-rule my-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-white-50">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,33 @@
+<section id="promociones" class="section-space promo-section">
+  <div class="container">
+    <div class="promo-header row align-items-center g-4 mb-4 mb-lg-5">
+      <div class="col-lg-8">
+        <span class="section-kicker"></span>
+        <h2 class="section-title">PROMOCIONES VIGENTES EN EL HOSPITAL</h2>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <span class="promo-caption"><i class="bi bi-megaphone me-2"></i></span>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      @for (promo of promociones; track promo.id) {
+        <div class="col-md-6 col-xl-4">
+          <article class="promo-card h-100">
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="promo-icon"><i [class]="promo.icono"></i></span>
+              <span class="promo-tag">{{ promo.etiqueta }}</span>
+            </div>
+            <div class="mt-4">
+              <h3>{{ promo.titulo }}</h3>
+              <p>{{ promo.descripcion }}</p>
+              <div class="d-flex align-items-end gap-2 mb-2"><strong class="promo-price">{{ promo.precio }}</strong><span class="text-body-secondary small">por paquete</span></div>
+              <small class="promo-valid"><i class="bi bi-calendar2-week me-2"></i>{{ promo.vigencia }}</small>
+            </div>
+            <a href="#solicitud" class="btn btn-outline-primary rounded-pill mt-4 w-100">Consultar promoción</a>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>
